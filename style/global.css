@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+#__next {
+  height: 100vh;
+  background: #000;
+  font-family: "Roboto", sans-serif;
+  user-select: none;
+}
+.ScrollbarsCustom-Thumb {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+.wrapper {
+  width: 100%;
+  padding: 24rem 0;
+}
+.bg-gray-05 {
+  background: #050505;
+}
+a {
+  display: inline-flex;
+}
+
+.bg-float-1,
+.bg-float-2 {
+  opacity: 0.4;
+  position: absolute;
+  min-width: 100%;
+  object-fit: cover;
+  transform: translateY(-66.6%);
+  animation: scroll 80s linear infinite;
+}
+.bg-float-2 {
+  animation-duration: 50s;
+}
+
+@keyframes scroll {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.test {
+  transition: .3s;
+}
+.test:hover {
+  transform: scale(1.5) rotate(15deg);
+}
