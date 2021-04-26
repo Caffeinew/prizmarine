@@ -2,10 +2,10 @@ import Link from 'next/link'
 
 export default function Footer() {
     return (
-        <footer className="w-full text-gray-300 font-thin p-32 relative z-10 bg-gray-05">
-            <h1 className="text-5xl ml-20">agency.prizm@gmail.com</h1>
+        <footer className="relative py-16 sm:p-32 flex flex-col items-center sm:items-start bg-05">
+             <h1 className="text-center sm:text-left text-2xl sm:text-4xl lg:text-5xl mb-8">agency.prizm@gmail.com</h1>
             <Link href="/request">
-                <a className="ml-24 mt-8 text-3xl border-b py-2">Оставить заявку</a>
+                <a className="sm:ml-8 text-xl sm:text-2xl lg:text-3xl border-b pb-1">Оставить заявку</a>
             </Link>
         </footer>
     )

@@ -1,18 +1,16 @@
-import Offers from "../components/offers";
 import About from "../components/about";
+import Flow from "../components/flow";
 import Footer from "../components/footer";
 import Landing from "../components/landing";
+import Services from "../components/services";
 
-export default function index() {
+export default function Index() {
   return (
     <>
-      <div className="w-full h-full overflow-hidden fixed">
-        <img className="bg-float-1" src="/bg-1.webp" alt="" />
-        <img className="bg-float-2" src="/bg-2.webp" alt="" />
-      </div>
+      <Flow />
       <Landing />
       <About />
-      <Offers />
+      <Services />
       <Footer />
     </>
   );

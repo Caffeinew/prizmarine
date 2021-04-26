@@ -1,36 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 
 #__next {
-  height: 100vh;
   background: #000;
   font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  height: 100vh;
   user-select: none;
-}
-.ScrollbarsCustom-Thumb {
-  background: rgba(255, 255, 255, 0.05) !important;
-}
-.wrapper {
-  width: 100%;
-  padding: 24rem 0;
-}
-.bg-gray-05 {
-  background: #050505;
-}
-a {
-  display: inline-flex;
-}
-
-.bg-float-1,
-.bg-float-2 {
-  opacity: 0.4;
-  position: absolute;
-  min-width: 100%;
-  object-fit: cover;
-  transform: translateY(-66.6%);
-  animation: scroll 80s linear infinite;
-}
-.bg-float-2 {
-  animation-duration: 50s;
+  @apply text-gray-300;
 }
 
 @keyframes scroll {
@@ -38,10 +14,22 @@ a {
     transform: translateY(0);
   }
 }
-
-.test {
-  transition: .3s;
+.bg-flow {
+  transform: translateY(-66.6%);
+  animation: scroll 60s linear infinite;
 }
-.test:hover {
-  transform: scale(1.5) rotate(15deg);
+.bg-flow:first-child {
+  animation-duration: 30s;
+}
+.ScrollbarsCustom-Wrapper {
+  inset: 0 !important;
+}
+.ScrollbarsCustom-Thumb {
+  background: #111 !important;
+}
+.ScrollbarsCustom-TrackY {
+  width: 6px !important;
+}
+.bg-05 {
+  background-color: #050505;
 }

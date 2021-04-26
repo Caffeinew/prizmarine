@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-export default function Offers() {
-  const offers = [
+export default function Services() {
+  const services = [
     {
       title: "WEB",
       text:
@@ -21,17 +21,18 @@ export default function Offers() {
       link: "promotion",
     },
   ];
-
   return (
-    <div className="text-gray-300 font-thin wrapper px-32 flex justify-center flex-col relative z-10">
-      <h1 className="text-5xl mb-32 ml-20">Предложения</h1>
-      <div className="grid lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-64 text-2xl">
-        {offers.map((offer, index) => (
-          <div key={index}>
-            <h1 className="text-4xl">{offer.title}</h1>
-            <p className="my-16">{offer.text}</p>
-            <Link href={"/service/" + offer.link}>
-              <a className="text-xl border-b">Узнать больше</a>
+    <div className="relative w-full px-6 py-16 sm:py-32 2xl:py-64 flex flex-col justify-center">
+      <h1 className="text-4xl text-center sm:text-left sm:text-5xl mb-16 sm:mb-32 sm:ml-20">
+        Предложения
+      </h1>
+      <div className="grid lg:grid-cols-2 2xl:grid-cols-3 justify-items-center gap-y-24 ">
+        {services.map((service, index) => (
+          <div key={index} className="max-w-sm">
+            <h1 className="text-3xl sm:text-4xl">{service.title}</h1>
+            <p className="my-8 sm:my-16 text-xl sm:text-2xl">{service.text}</p>
+            <Link href={"/service/" + service.link}>
+              <a className="text-lg sm:text-xl pb-1 border-b">Узнать больше</a>
             </Link>
           </div>
         ))}
