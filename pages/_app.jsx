@@ -1,11 +1,12 @@
 import "tailwindcss/tailwind.css";
 import "../style/global.css";
-import { Scrollbar } from "react-scrollbars-custom";
+import 'overlayscrollbars/css/OverlayScrollbars.css';
+import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 
 export default function App({ Component, pageProps }) {
   return (
-    <Scrollbar style={{ width: "100%", height: "100%" }}>
+    <OverlayScrollbarsComponent style={{ maxHeight: '100vh' }}>
       <Component {...pageProps} />
-    </Scrollbar>
+    </OverlayScrollbarsComponent>
   );
 }

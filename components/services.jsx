@@ -1,24 +1,44 @@
-import Link from "next/link";
-
 export default function Services() {
-  const services = [
+  const serviceList = [
     {
       title: "WEB",
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sequi beatae at optio sint hic officiis possimus iure dolorem iusto! Nam inventore dolore dolorum saepe maiores voluptates odio placeat doloremque?",
-      link: "web",
+      text: (
+        <>
+          Разработка сайтов - визиток, лэндингов, магазинов и прочего.
+          Подключение Баз данных, метрики
+          <br />
+          <br />
+          Веб-приложения, SPA, PWA
+        </>
+      ),
+      quark: <>Похуй &copy; главный разработчик</>,
     },
     {
       title: "DESIGN",
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sequi beatae at optio sint hic officiis possimus iure dolorem iusto! Nam inventore dolore dolorum saepe maiores voluptates odio placeat doloremque?",
-      link: "design",
+      text: (
+        <>
+          Создание логотипов, интерфейсов, иллюстраций и анимаций. Оформление
+          социальных сетей
+          <br />
+          <br />
+          Брендинг, редизайн, 3D
+        </>
+      ),
+      quark: <>У нас на сайте плывёт фон</>,
     },
     {
       title: "PROMOTION",
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sequi beatae at optio sint hic officiis possimus iure dolorem iusto! Nam inventore dolore dolorum saepe maiores voluptates odio placeat doloremque?",
-      link: "promotion",
+      text: (
+        <>
+          Настройка SMM, таргетинга, ретаргитинга и метрики.
+          <br />
+          SEO оптимизация
+          <br />
+          <br />
+          Контекстная / Нативная реклама
+        </>
+      ),
+      quark: <>Конторы из 6 букв не пишут на заборах</>,
     },
   ];
   return (
@@ -27,13 +47,11 @@ export default function Services() {
         Предложения
       </h1>
       <div className="grid lg:grid-cols-2 2xl:grid-cols-3 justify-items-center gap-y-24 ">
-        {services.map((service, index) => (
+        {serviceList.map((service, index) => (
           <div key={index} className="max-w-sm">
             <h1 className="text-3xl sm:text-4xl">{service.title}</h1>
-            <p className="my-8 sm:my-16 text-xl sm:text-2xl">{service.text}</p>
-            <Link href={"/service/" + service.link}>
-              <a className="text-lg sm:text-xl pb-1 border-b">Узнать больше</a>
-            </Link>
+            <p className="my-8 sm:my-16 text-xl sm:text-2xl ">{service.text}</p>
+            <p className="my-8 sm:my-16 text-xl sm:text-2xl">{service.quark}</p>
           </div>
         ))}
       </div>
