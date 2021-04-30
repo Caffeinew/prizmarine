@@ -1,6 +1,6 @@
 import "tailwindcss/tailwind.css";
-import "../style/global.css";
 import 'overlayscrollbars/css/OverlayScrollbars.css';
+import "../style/global.css";
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 
 export default function App({ Component, pageProps }) {
