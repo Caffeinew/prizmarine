@@ -32,23 +32,3 @@
 .bg-05 {
   background-color: #050505;
 }
-
-
-.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
-  background: rgba(255, 255, 255, 0.1)!important;
-}
-.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
-  background: rgba(255, 255, 255, 0.1)!important;
-}
-.os-theme-dark > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle {
-  background: rgba(255, 255, 255, 0.15)!important;
-}
-.os-theme-light > .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle {
-  background: rgba(255, 255, 255, 0.15)!important;
-}
-.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active {
-  background: rgba(255, 255, 255, 0.2)!important;
-}
-.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active {
-  background: rgba(255, 255, 255, 0.2)!important;
-}
