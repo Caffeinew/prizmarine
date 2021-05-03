@@ -1,6 +1,14 @@
+import { useLocomotiveScroll } from "react-locomotive-scroll";
+
 export default function About() {
+  const { scroll } = useLocomotiveScroll();
   return (
-    <div className="relative px-6 w-full h-screen bg-05 flex flex-col justify-center">
+    <div
+      className="absolute px-6 w-full h-screen bg-gray-1000 flex flex-col justify-center"
+      data-scroll
+      data-scroll-speed="1"
+      style={{top: "70vh"}}
+    >
       <h1 className="text-center sm:ml-20 sm:text-left text-4xl sm:text-5xl ">
         О нас
       </h1>

@@ -1,4 +1,7 @@
+import { useLocomotiveScroll } from "react-locomotive-scroll";
+
 export default function Services() {
+  const { scroll } = useLocomotiveScroll();
   const serviceList = [
     {
       title: "WEB",
@@ -11,7 +14,7 @@ export default function Services() {
           Веб-приложения, SPA, PWA
         </>
       ),
-      quark: <>Похуй &copy; главный разработчик</>,
+      quark: <>Пох*й &copy; главный разработчик</>,
     },
     {
       title: "DESIGN",
@@ -42,7 +45,12 @@ export default function Services() {
     },
   ];
   return (
-    <div className="relative w-full px-6 py-16 sm:py-32 2xl:py-64 flex flex-col justify-center">
+    <div
+      className="relative w-full px-6 py-16 sm:py-32 2xl:py-64 flex flex-col justify-center z-10 bg-black"
+      data-scroll
+      data-scroll-speed="8"
+      style={{marginTop: "30vh"}}
+    >
       <h1 className="text-4xl text-center sm:text-left sm:text-5xl mb-16 sm:mb-32 sm:ml-20">
         Предложения
       </h1>
