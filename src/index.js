@@ -9,8 +9,8 @@ new LocomotiveScroll({
   lerp: 0.05,
 });
 
-formElement.onSubmit = (e) => {
-  e.preventDefault();
+formElement.onSubmit = (event) => {
+  event.preventDefault();
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
