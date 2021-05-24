@@ -9,14 +9,13 @@ new LocomotiveScroll({
   lerp: 0.05,
 });
 
-formElement.onsubmit = (event) => {
-  event.preventDefault();
-
-  fetch("http://localhost:80/request", {
+formElement.onSubmit = (e) => {
+  e.preventDefault();
+  fetch("/", {
     method: "POST",
-    body: new FormData(formElement),
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(formElement)).toString(),
   })
-    .then((res) => res.json())
-    .then((data) => console.log(data))
-    .catch((e) => console.log(e));
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
 };
