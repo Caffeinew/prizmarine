@@ -1,13 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
   mode: "production",
   target: "web",
-  entry: {
-    app: ["./src/front.js"]
-  },
   module: {
     rules: [
       {
@@ -23,12 +21,13 @@ module.exports = {
       },
       {
         test: /\.(s[ac]|c)ss$/,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
