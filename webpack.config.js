@@ -1,16 +1,20 @@
-const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const path = require('path')
 
 module.exports = {
   mode: "production",
   target: "web",
+  output: {
+    filename: "[contenthash].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "assets/[hash][ext][query]",
+  },
   module: {
     rules: [
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        test: /\.(png|jpe?g|gif|webp|svg)$/i,
+        type: "asset",
       },
       {
         test: /\.js$/,
@@ -21,29 +25,18 @@ module.exports = {
       },
       {
         test: /\.(s[ac]|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      inject: "body",
-    }),
-  ],
-  output: {
-    path: path.resolve(__dirname, "./build"),
-    filename: "bundle-front.js",
-  },
+    template: "./src/index.html"
+  })],
+  devtool: "source-map",
   devServer: {
-    host: '0.0.0.0',
-    publicPath: '/build/',
-    contentBase: path.resolve(__dirname, "./build"),
-    watchContentBase: true,
-    compress: true,
-    hot: true
+    contentBase: "./dist",
+    hot: true,
   },
-  devtool: 'source-map',
-}
+};
