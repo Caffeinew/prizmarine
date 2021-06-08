@@ -41,6 +41,7 @@ module.exports = {
       patterns: [
         { from: "src/assets/icons", to: "assets/icons" },
         { from: "src/manifest.json", to: "manifest.json" },
+        { from: "src/robots.txt", to: "robots.txt" },
       ],
     }),
     new WorkboxPlugin.GenerateSW(),
