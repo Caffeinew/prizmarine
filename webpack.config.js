@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
-const path = require('path')
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   mode: "production",
@@ -32,8 +33,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-    template: "./src/index.html"
-  })],
+      template: "./src/index.html",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "src/assets/icons", to: "assets/icons" }],
+      patterns: [{ from: "src/manifest.json", to: "manifest.json" }],
+    }),
+  ],
   devtool: "source-map",
   devServer: {
     contentBase: "./dist",
