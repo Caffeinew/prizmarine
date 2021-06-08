@@ -1,15 +1,16 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 const path = require("path");
 
 module.exports = {
   mode: "production",
   target: "web",
   output: {
-    filename: "[contenthash].bundle.js",
+    filename: "main.bundle.js",
     path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "assets/[hash][ext][query]",
+    assetModuleFilename: "assets/[name][ext][query]",
   },
   module: {
     rules: [
@@ -34,7 +35,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      favicon: "./src/favicon.ico"
+      favicon: "./src/favicon.ico",
     }),
     new CopyPlugin({
       patterns: [
@@ -42,6 +43,7 @@ module.exports = {
         { from: "src/manifest.json", to: "manifest.json" },
       ],
     }),
+    new WorkboxPlugin.GenerateSW(),
   ],
   devtool: "source-map",
   devServer: {
