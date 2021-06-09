@@ -22,3 +22,37 @@ h1 {
 .c-scrollbar_thumb {
   background-color: #222;
 }
+
+#nprogress .bar {
+  background: #eee;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px #eee, 0 0 5px #eee;
+}
+
+.swal2-success-fix,
+.swal2-success-circular-line-right,
+.swal2-success-circular-line-left,
+.swal2-popup {
+  background-color: #111 !important;
+}
+
+.swal2-title {
+  color: #ccc !important;
+}
+.swal2-confirm {
+  border-radius: 0!important;
+  font-weight: 400!important;
+  border: 1px solid #222!important;
+  color: #ccc!important;
+  width: 80%!important;
+  background-color: #080808!important;
+  box-shadow: none!important;
+
+}
+.swal2-x-mark-line-left {
+  left: auto!important;
+}
+.swal2-x-mark-line-right {
+  right: auto!important;
+}

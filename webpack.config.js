@@ -8,7 +8,7 @@ module.exports = {
   mode: "production",
   target: "web",
   output: {
-    filename: "main.bundle.js",
+    filename: "[hash].bundle.js",
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/[name][ext][query]",
   },

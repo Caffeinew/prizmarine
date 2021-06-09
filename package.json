@@ -4,10 +4,12 @@
     "start": "webpack serve",
     "build": "webpack",
     "watch": "webpack --watch",
-    "dev": "netlify dev"
+    "dev": "netlify dev",
+    "netlify": "webpack && netlify dev"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
@@ -29,6 +31,7 @@
     "locomotive-scroll": "^4.1.1",
     "netlify-cli": "^3.35.11",
     "nodemailer": "^6.6.1",
+    "nprogress": "^0.2.0",
     "sweetalert2": "^11.0.16"
   }
 }

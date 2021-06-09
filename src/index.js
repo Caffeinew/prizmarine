@@ -1,7 +1,9 @@
 import "locomotive-scroll/src/locomotive-scroll.scss";
+import "nprogress/nprogress.css"
 import "./style/index.scss";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 import LocomotiveScroll from "locomotive-scroll";
+import NProgress from "nprogress"
 
 new LocomotiveScroll({
   el: document.querySelector("#container"),
@@ -12,6 +14,34 @@ new LocomotiveScroll({
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("service-worker.js");
+
+    formElement.onsubmit = async (event) => {
+      event.preventDefault();
+      NProgress.start()
+      const formData = Object.fromEntries(new FormData(formElement).entries());
+
+      const data = await fetch("/.netlify/functions/request", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const res = await data.json();
+      NProgress.done()
+      if (res.result) {
+        Swal.fire({
+          title: "Отлично 🙂",
+          icon: "success",
+        });
+      } else {
+        Swal.fire({
+          title: "Что-то пошло не так 😕",
+          icon: "error",
+        });
+      }
+    };
   });
 }
 
@@ -34,28 +64,3 @@ ym(80457868, "init", {
   trackLinks: true,
   accurateTrackBounce: true,
 });
-
-formElement.onSubmit = async (event) => {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  const data = await fetch("/api/request", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    body: JSON.stringify(formData),
-  });
-  const res = await data.json()
-
-  if(res.result) {
-    Swal.fire({
-      title: "успех",
-      icon: "success"
-    })
-  } else {
-    Swal.fire({
-      title: "Ошибка",
-      icon: "Error"
-    })
-  }
-};
