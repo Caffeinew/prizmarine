@@ -35,7 +35,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      favicon: "./src/favicon.ico",
+      favicon: "./src/favicon.svg",
     }),
     new CopyPlugin({
       patterns: [

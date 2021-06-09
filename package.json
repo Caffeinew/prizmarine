@@ -3,7 +3,8 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "dev": "netlify dev"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -25,6 +26,9 @@
     "workbox-webpack-plugin": "^6.1.5"
   },
   "dependencies": {
-    "locomotive-scroll": "^4.1.1"
+    "locomotive-scroll": "^4.1.1",
+    "netlify-cli": "^3.35.11",
+    "nodemailer": "^6.6.1",
+    "sweetalert2": "^11.0.16"
   }
 }
