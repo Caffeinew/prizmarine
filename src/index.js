@@ -5,6 +5,8 @@ import Swal from "sweetalert2";
 import LocomotiveScroll from "locomotive-scroll";
 import NProgress from "nprogress"
 
+NProgress.configure({ showSpinner: false });
+
 new LocomotiveScroll({
   el: document.querySelector("#container"),
   smooth: true,

@@ -8,7 +8,7 @@ module.exports = {
   mode: "production",
   target: "web",
   output: {
-    filename: "[hash].bundle.js",
+    filename: "[fullhash].bundle.js",
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/[name][ext][query]",
   },
@@ -42,9 +42,10 @@ module.exports = {
         { from: "src/assets/icons", to: "assets/icons" },
         { from: "src/manifest.json", to: "manifest.json" },
         { from: "src/robots.txt", to: "robots.txt" },
+        { from: "src/assets/logo.webp", to: "assets/logo.webp" },
       ],
     }),
-    new WorkboxPlugin.GenerateSW(),
+    new WorkboxPlugin.GenerateSW({exclude: [/\.(?:png)$/]}),
   ],
   devtool: "source-map",
   devServer: {
