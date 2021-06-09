@@ -123,13 +123,14 @@ form {
     font-size: max(16px, 0.9vw);
     width: 50%;
     background: #0c0c0c;
+    outline: 1px solid #0c0c0c;
     border: none;
     margin: 1rem 0;
     padding: 1rem;
     color: #aaa;
   }
   input:focus {
-    outline: 1px solid #333;
+    outline-color:#333;
   }
   button:focus {
     border-color: #222;
