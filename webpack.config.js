@@ -47,7 +47,6 @@ module.exports = {
     }),
     new WorkboxPlugin.GenerateSW({exclude: [/\.(?:png)$/]}),
   ],
-  devtool: "source-map",
   devServer: {
     contentBase: "./dist",
     hot: true,
